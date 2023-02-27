@@ -1,0 +1,21 @@
+.App {
+  padding: 30px;
+  display: flex;
+}
+
+.App > div {
+  margin-right: 50px;
+}
+
+.todolist{
+  padding:10px;
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+.todolistemty{
+  padding:10px;
+  background-color: salmon;
+  border: 2px solid red;
+  border-radius: 5px;
+}
