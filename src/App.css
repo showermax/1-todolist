@@ -19,3 +19,11 @@
   border: 2px solid red;
   border-radius: 5px;
 }
+
+.to-do {
+  color: darkblue;
+}
+.in-progress {
+  color: darkcyan;
+  font-weight: bold;
+}

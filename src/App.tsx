@@ -20,8 +20,8 @@ function App(): JSX.Element {
     ]
     return (
         <div className="App">
-        <Todolist title = {"What to do"} tasks= {arrofTasks}/>
-        <Todolist title = {"In progress"} tasks= {arrofTasks2}/>
+        <Todolist title = {"What to do"} tasks = {arrofTasks} classCss={"to-do"}/>
+        <Todolist title = {"In progress"} tasks = {arrofTasks2} classCss={"in-progress"}/>
         {/*<Todolist title = {"What to use"}/>*/}
         </div>
     );
