@@ -6,6 +6,7 @@ type TodolistPropsType = {
     tasks: Array<TaskType>
     classCss: string
     remove: Function
+    filter: Function
 }
 
 // const Todolist: FC
@@ -32,9 +33,9 @@ export function Todolist(props: TodolistPropsType) {
                 {/*<li>{props.tasks[2].id}<input type="checkbox" checked={props.tasks[2].isDone}/> <span>{props.tasks[2].title}</span></li>*/}
             </ul>
             <div>
-                <button>All</button>
-                <button>Active</button>
-                <button>Completed</button>
+                <button onClick={()=>props.filter("All")}>All</button>
+                <button onClick={()=>props.filter("Active")}>Active</button>
+                <button onClick={()=>props.filter("Completed")}>Completed</button>
             </div>
         </div>
 

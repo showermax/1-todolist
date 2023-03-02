@@ -7,6 +7,7 @@ export type TaskType = {
     title: string
     isDone: boolean
 }
+export type filterType = "All" | "Active"| "Completed"
 function App(): JSX.Element {
     let [arrofTasks, setStateTasks] = useState<TaskType[]>(
         [
@@ -16,6 +17,7 @@ function App(): JSX.Element {
         {id: 4, title: "ES6/TS", isDone: false},
     ]
     )
+    let [f, setF] = useState<filterType>("All")
 
     // const arrofTasks2: TaskType[] = [
     //     {id: 1, title: "HTML&CSS", isDone: false},
@@ -27,15 +29,19 @@ function App(): JSX.Element {
         let newTasks = arrofTasks.filter((el) => el.id != id)
         setStateTasks(newTasks)
     }
-    function filterTasks(f: string) {
-        if (f=="Active") {
-            let newTasks = arrofTasks.filter((el) => el.isDone == true)
-            setStateTasks(newTasks)
-        }
+    function filterTasks(f: filterType) {
+        setF(f)
     }
+    let newTasks2=arrofTasks
+        if (f==="Completed") {
+            newTasks2 = arrofTasks.filter((el) => el.isDone == true)
+        }
+        if (f==="Active") {
+            newTasks2 = arrofTasks.filter((el) => el.isDone == false)
+        }
     return (
         <div className="App">
-        <Todolist title = {"What to do"} tasks = {arrofTasks} classCss={"to-do"} remove={removeTask} filter={filterTasks}/>
+        <Todolist title = {"What to do"} tasks = {newTasks2} classCss={"to-do"} remove={removeTask} filter={filterTasks}/>
         {/*<Todolist title = {"In progress"} tasks = {arrofTasks2} classCss={"in-progress"}/>*/}
         </div>
     );
